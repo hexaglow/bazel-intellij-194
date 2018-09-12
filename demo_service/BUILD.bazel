@@ -8,7 +8,6 @@ proto_library(
 
 go_proto_library(
     name = "demo_service_go",
-    compilers = ["@io_bazel_rules_go//proto:go_grpc"],
     importpath = "hexaglow.com/demo/grpc/demo_service",
     proto = ":demo_service",
     visibility = ["//visibility:public"],
