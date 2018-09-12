@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+
+proto_library(
+    name = "demo_service",
+    srcs = ["demo_service.proto"],
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "demo_service_go",
+    compilers = ["@io_bazel_rules_go//proto:go_grpc"],
+    importpath = "hexaglow.com/demo/grpc/demo_service",
+    proto = ":demo_service",
+    visibility = ["//visibility:public"],
+)
